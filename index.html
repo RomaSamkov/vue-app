@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vue</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -12,8 +12,8 @@
         <div class="card center">
             <h1>Counter: {{counter}}</h1>
             <div>
-                <button class="btn primary">+</button>
-                <button class="btn secondary">-</button>
+                <button class="btn primary" v-on:click="counter++">+</button>
+                <button class="btn secondary" v-on:click="counter--">-</button>
             </div>
         </div>
     </div>
