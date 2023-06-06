@@ -1,7 +1,8 @@
 const App = {
   data() {
     return {
-      counter: 1,
+      CustomPlaceholder: "Enter name todo",
+      title: "To Do List:",
     };
   },
 };
