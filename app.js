@@ -12,11 +12,16 @@ const App = {
       this.inputValue = e.target.value;
     },
     addNewNote() {
-      this.notes.push(this.inputValue);
-      this.inputValue = "";
+      if (this.inputValue !== "") {
+        this.notes.push(this.inputValue);
+        this.inputValue = "";
+      }
     },
     onDeleteNote(idx) {
       this.notes.splice(idx, 1);
+    },
+    handleToUpperCase(item) {
+      return item.toUpperCase();
     },
   },
 };

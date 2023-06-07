@@ -13,16 +13,16 @@
             <h1>{{title}}</h1>
             <div class="form-control">
                 <input type="text" 
-                v-bind:placeholder="CustomPlaceholder" 
-                v-bind:value="inputValue" 
-                v-on:input="inputChangeHandler" 
-                v-on:keypress.enter="addNewNote"/>
+                :placeholder="CustomPlaceholder" 
+                :value="inputValue" 
+                @input="inputChangeHandler" 
+                @keypress.enter="addNewNote"/>
             </div>
-            <button class="btn" v-on:click="addNewNote">Add</button>
+            <button class="btn" @click="addNewNote">Add</button>
             <hr>
             <ul class="list" v-if="notes.length !== 0">
-                <li class="list-item" v-for="(myNote,idx) of notes">({{idx+1}}){{myNote}}
-                    <button class="btn secondary" v-on:click="onDeleteNote(idx)">Delete</button>
+                <li class="list-item" v-for="(myNote,idx) of notes">({{idx+1}}) {{handleToUpperCase(myNote)}}
+                    <button class="btn secondary" @click="onDeleteNote(idx)">Delete</button>
                 </li>
             </ul>
             <div v-else>To do list is empty !</div>
