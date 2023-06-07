@@ -8,9 +8,9 @@ const App = {
     };
   },
   methods: {
-    inputChangeHandler(e) {
-      this.inputValue = e.target.value;
-    },
+    // inputChangeHandler(e) {
+    //   this.inputValue = e.target.value;
+    // },
     addNewNote() {
       if (this.inputValue !== "") {
         this.notes.push(this.inputValue);
@@ -22,6 +22,19 @@ const App = {
     },
     handleToUpperCase(item) {
       return item.toUpperCase();
+    },
+  },
+  computed: {
+    doubleCountComputed() {
+      console.log("DoubleCount!");
+      return this.notes.length * 2;
+    },
+  },
+  watch: {
+    inputValue(value) {
+      if (value.length > 10) {
+        alert("Hello Vue.JS !");
+      }
     },
   },
 };

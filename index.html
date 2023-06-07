@@ -14,8 +14,7 @@
             <div class="form-control">
                 <input type="text" 
                 :placeholder="CustomPlaceholder" 
-                :value="inputValue" 
-                @input="inputChangeHandler" 
+                v-model="inputValue" 
                 @keypress.enter="addNewNote"/>
             </div>
             <button class="btn" @click="addNewNote">Add</button>
@@ -24,6 +23,8 @@
                 <li class="list-item" v-for="(myNote,idx) of notes">({{idx+1}}) {{handleToUpperCase(myNote)}}
                     <button class="btn secondary" @click="onDeleteNote(idx)">Delete</button>
                 </li>
+                <hr>
+                <li><strong>Amount: {{notes.length}}</strong> | x2:{{doubleCountComputed}}</li>
             </ul>
             <div v-else>To do list is empty !</div>
         </div>
