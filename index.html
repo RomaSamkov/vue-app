@@ -34,9 +34,15 @@
     <div class="container pt-5" id="app">
         <div class="card center">
             <div v-html="myHtml"></div>
-            <h2 v-text="title"></h2>
+            <!-- <h2 v-text="title"></h2>
             <h2 v-once>{{title}}</h2>   
-            <button class="btn" @click="title='Title Vue'">Click</button>         
+            <button class="btn" @click="title='Title Vue'">Click</button>          -->
+            <!-- <ul class="list" v-for="item in 7">
+                <li class="list-item">{{item}}</li>
+            </ul> -->
+            <ul class="list" v-for="(value,key) in person">
+                <li class="list-item"><strong>{{key}} : </strong> {{value}}</li>
+            </ul>
         </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
