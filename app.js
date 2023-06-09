@@ -38,7 +38,7 @@
 
 // Vue.createApp(App).mount("#app");
 const App = {
-  data: () => ({ title: "Grut Text" }),
+  data: () => ({ title: "Grut Text", myHtml: "<h1>My Vue</h1>" }),
   methods: {},
   computed: {},
   watch: {},
