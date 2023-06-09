@@ -10,7 +10,7 @@
 <body>
     <div class="container " id="app">
         <div class="card ">
-            <h1 :style="{color: inputValue.length > 3 ? 'green': 'yellow'}">{{title}}</h1>
+            <h1 :style="{color: inputValue.length > 3 ? 'green': 'darkpurple'}">{{title}}</h1>
             <div class="form-control">
                 <input type="text" 
                 :placeholder="CustomPlaceholder" 
@@ -20,7 +20,9 @@
             <button class="btn" @click="addNewNote">Add</button>
             <hr>
             <ul class="list" v-if="notes.length !== 0">
-                <li class="list-item" v-for="(myNote,idx) of notes">({{idx+1}}) {{handleToUpperCase(myNote)}}
+                <li class="list-item" v-for="(myNote,idx) of notes">
+                    <!-- <span :class="myNote.length > 5 ? 'primary' : 'bold' ">({{idx+1}}) {{handleToUpperCase(myNote)}}</span> -->
+                    <span :class="['bold',{'primary':myNote.length > 5}] ">({{idx+1}}) {{handleToUpperCase(myNote)}}</span>
                     <button class="btn secondary" @click="onDeleteNote(idx)">Delete</button>
                 </li>
                 <hr>
