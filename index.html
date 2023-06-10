@@ -41,7 +41,7 @@
                 <li class="list-item">{{item}}</li>
             </ul> -->
             <ul class="list" v-if="items.length">
-                <li class="list-item" v-for="(value,key) in items" @click="items.splice(key,1)"><strong>{{value}}</strong></li>
+                <li class="list-item" v-for="(value,key) in items" @click="items.splice(key,1)" :key='value'><strong>{{value}}</strong>&nbsp;<input type="text" @click.stop></li>
             </ul>
             <h3 v-else>This list is Vue App</h3>
         </div>
