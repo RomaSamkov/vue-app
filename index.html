@@ -40,9 +40,10 @@
             <!-- <ul class="list" v-for="item in 7">
                 <li class="list-item">{{item}}</li>
             </ul> -->
-            <ul class="list" v-for="(value,key) in person">
-                <li class="list-item"><strong>{{key}} : </strong> {{value}}</li>
+            <ul class="list" v-if="items.length">
+                <li class="list-item" v-for="(value,key) in items" @click="items.splice(key,1)"><strong>{{value}}</strong></li>
             </ul>
+            <h3 v-else>This list is Vue App</h3>
         </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
