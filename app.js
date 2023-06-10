@@ -48,7 +48,12 @@ const App = {
     },
     items: [1, 2, 3, 4, 5, 6],
   }),
-  methods: {},
+  methods: {
+    addItem() {
+      this.items.unshift(this.$refs.myInput.value);
+      this.$refs.myInput.value = "";
+    },
+  },
   computed: {
     evenItems() {
       return this.items.filter((i) => i % 2 === 0);
